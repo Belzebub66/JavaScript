@@ -182,3 +182,6 @@ function crearGato(nuevoNombreGato){
 
 crearGato("Bowie");
 console.log("Fuera de la función: " + nombreGato);
+
+
+//del entegable solo son dos funciones, agregasr litro y
