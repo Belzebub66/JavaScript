@@ -14,8 +14,8 @@ function libro(titulo, autor, anio, estado){
         console.log("se agrego el capitulo " + capitulo + " al libro" + titulo);
     }
     this.quitarUltimoCapitulo = function(){
-        this.capitulo.push(capitulos);
-        console.log("se agrego el capitulo " + capitulo + " al libro" + titulo);
+        this.capitulos.pop();
+        console.log("se quito el ultimo capitulo");
     }
     this.quitarCapituloNombre = function(capitulo){
         this.capitulos.splice(this.capitulos.indexOf(capitulo), 1);
@@ -69,3 +69,31 @@ libro5.describirLibro();
 libro6.describirLibro();
 libro7.describirLibro();
 libro8.describirLibro();
+
+libro1.agregarCapitulos("Capitulo 1");
+libro1.agregarCapitulos("Capitulo 2");
+libro1.agregarCapitulos("Capitulo 3");
+libro1.agregarCapitulos("Capitulo 4");
+libro1.agregarCapitulos("Capitulo 5");
+libro1.quitarUltimoCapitulo();
+libro1.quitarCapituloNombre("capitulo 3");
+console.table(libro1);
+
+lista.agregarLibro(libro1);
+lista.agregarLibro(libro2);
+lista.agregarLibro(libro3);
+lista.agregarLibro(libro4);
+lista.agregarLibro(libro5);
+
+lista.busquedaNombre("Tormenta Roja");
+
+
+lista.filtradoAutor("Tom Clancy");
+
+lista.mostrarLista();
+
+
+lista.quitarNombre("Matterhorn");
+
+
+console.log(lista);
