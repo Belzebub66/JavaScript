@@ -78,6 +78,19 @@ function generatePassword() {
 
   document.getElementById("generatedPassword").innerText = password;
   console.log(password);
+
+  function determineStrength(password) {
+    let strength = 0;
+    if (password.length >= 8) strength++;
+    if (/[A-Z]/.test(password)) strength++;
+    if (/[a-z]/.test(password)) strength++;
+    if (/\d/.test(password)) strength++;
+    if (/[^A-Za-z0-9]/.test(password)) strength++;
+  
+    return strength;
+  }
+  document.getElementById("strengthPassword").innerText = determineStrength(password);
+  console.log(determineStrength(password));
 }
 
 document.getElementById("generatePassword").addEventListener("click", () => {
@@ -95,25 +108,6 @@ document.getElementById("copyPassword").addEventListener("click", () => {
   });
 });
 
-// Determine ths strength of the password based on legth and character types
-function determinePasswordStrength(password) {
-  let strength = 0;
-  if (password.length >= 8) {
-    strength++;
-  }
-  if (/[A-Z]/.test(password)) {
-    strength++;
-  }
-  if (/[a-z]/.test(password)) {
-    strength++;
-  }
-  if (/[0-9]/.test(password)) {
-    strength++;
-  }
-  if (/[^A-Za-z0-9]/.test(password)) {
-    strength++;
-  }
-  return strength;
-}
+
 
 
