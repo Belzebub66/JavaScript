@@ -28,10 +28,21 @@ function addCommentFunc(){
     let newP = document.createElement("p");
     newP.innerText = dateStr;
 
+    // Creating a delete button
+    let deleteButton = document.createElement("button");
+    deleteButton.innerText = "Delete";
+    deleteButton.classList.add("delete-btn");
 
-    commentList.appendChild(newDiv); //appending the new li element to the ul element
+    // Adding an event listener to the delete button
+    deleteButton.addEventListener("click", function () {
+        commentList.removeChild(newDiv);
+    });
+    
     newDiv.appendChild(newh2); //appending the new li element to the ul element
     newDiv.appendChild(newP); //appending the new li element to the ul element
+    newDiv.appendChild(deleteButton); //appending the new li element to the ul element
+    
+    commentList.appendChild(newDiv); //appending the new li element to the ul element
 }
 
 addComment.addEventListener("click", addCommentFunc);
